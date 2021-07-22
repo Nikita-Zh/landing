@@ -1,0 +1,172 @@
+.navbar-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 3rem;
+
+    z-index: 3;
+}
+
+.navbar {
+    border-radius: 4rem;
+    padding: 1rem;
+    background: rgba(244, 244, 244, 0.8);
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    opacity: 0;
+    transition: .3s;
+    backdrop-filter: blur(8px);
+
+    &.hidden {
+        // display: none;
+        opacity: 1;
+    }
+
+    .navbar-item__background {
+        border-radius: 4rem;
+        background: #000;
+        position: absolute;
+        // width: 100px;
+        //width: (100% / 4);
+        height: 4rem;
+        top: 1rem;
+        z-index: 0;
+        transition: .2s ease-in-out;
+
+    }
+
+    .navbar-item {
+        padding: 1rem 1.5rem;
+        color: black;
+        border-radius: 4rem;
+        z-index: 1;
+        cursor: pointer;
+        transition: .2s;
+
+        &:active,
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            color: rgb(80, 80, 80);
+        }
+
+        &::-moz-focus-inner {
+            border: 0;
+        }
+
+        &.is-active {
+            //sbackground: #000;
+            color: #fff;
+        }
+
+    }
+}
+
+
+
+// .menu--alonso .menu__item:nth-child(1).menu__item--current~.menu__line {
+//     -webkit-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+// }
+
+// .menu--alonso .menu__item:nth-child(2).menu__item--current~.menu__line {
+//     -webkit-transform: translate3d(100%, 0, 0);
+//     transform: translate3d(100%, 0, 0);
+// }
+
+// .menu--alonso .menu__item:nth-child(3).menu__item--current~.menu__line {
+//     -webkit-transform: translate3d(200%, 0, 0);
+//     transform: translate3d(200%, 0, 0);
+// }
+
+// .menu--alonso .menu__item:nth-child(4).menu__item--current~.menu__line {
+//     -webkit-transform: translate3d(300%, 0, 0);
+//     transform: translate3d(300%, 0, 0);
+// }
+
+// .menu--alonso .menu__item:nth-child(5).menu__item--current~.menu__line {
+//     /* -webkit-transform: translate3d(400%, 0, 0); */
+//     transform: translate3d(400%, 0, 0);
+// }
+
+
+
+
+.navbar2-wrapper {
+    // width: 100%;
+    // display: flex;
+    // justify-content: center;
+    // position: fixed;
+    // bottom: 3rem;
+
+
+
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+    z-index: 3;
+}
+
+.navbar2 {
+    border-radius: 4rem;
+    padding: 1rem;
+    background: rgba(244, 244, 244, 0.8);
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    opacity: 0;
+    transition: .3s;
+
+    &.hidden {
+        // display: none;
+        opacity: 1;
+    }
+
+    .navbar2-item__background {
+        border-radius: 4rem;
+        background: #000;
+        position: absolute;
+        // width: 100px;
+        //width: (100% / 4);
+        height: 4rem;
+        top: 1rem;
+        z-index: 0;
+        transition: .2s ease-in-out;
+
+    }
+
+    .navbar2-item {
+        padding: 1rem 1.5rem;
+        color: black;
+        border-radius: 4rem;
+        z-index: 1;
+        cursor: pointer;
+        transition: .2s;
+
+        &:active,
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            color: rgb(80, 80, 80);
+        }
+
+        &::-moz-focus-inner {
+            border: 0;
+        }
+
+        &.is-active {
+            //sbackground: #000;
+            color: #fff;
+        }
+
+    }
+}
