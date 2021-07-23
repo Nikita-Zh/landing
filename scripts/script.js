@@ -38,7 +38,7 @@ let sectionsTop = getTopOfElements(elements.sections)
 
 window.addEventListener('resize', debounce(() => {
     sectionsTop = getTopOfElements(elements.sections)
-    scrollerItemsLeft = getLeftOfElements(elements.scrollerItems)
+    scrollerItemsLeft = getLeftOfElements(NavBarElements.navbarItems)
 }, 0, false))
 
 //console.log(currentSection)
