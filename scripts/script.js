@@ -51,9 +51,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }, 0, false))
 });
 
-console.log(elements)
-console.log(sectionsTop)
-console.log(scrollerItemsLeft)
+// console.log(elements)
+// console.log(sectionsTop)
+// console.log(scrollerItemsLeft)
 
 let currentPosition = 0;
 
@@ -194,15 +194,15 @@ Scroll(window, WrapperFunction)
 Swipe(elements.sectionsWrapper, WrapperFunction, false)
 
 
-// window.addEventListener('scroll', debounce((e) => {
-//     console.log('scroll window end, dfFSOPFSDFKODFSKSFKPOFSOKPFSDKOPFKSDOFKSDOOFKPSSDK')
-//     flagScrollStart = false
-// }, 800, false))
+window.addEventListener('scroll', debounce((e) => {
+    // console.log('scroll window end, dfFSOPFSDFKODFSKSFKPOFSOKPFSDKOPFKSDOFKSDOOFKPSSDK')
+    flagScrollStart = false
+}, 800, false))
 
-// elements.scrollerWrapper.addEventListener('scroll', debounce((e) => {
-//     console.log('scroll SCROLLER end, 22771190139123-090913910230')
-//     flagScrollStart = false
-// }, 800, false))
+elements.scrollerWrapper.addEventListener('scroll', debounce((e) => {
+    // console.log('scroll SCROLLER end, 22771190139123-090913910230')
+    flagScrollStart = false
+}, 800, false))
 
 
 let right
@@ -227,3 +227,31 @@ let changeProgressBar = (ev) => {
 }
 changeProgressBar()
 elements.scrollerWrapper.addEventListener("scroll", changeProgressBar)
+
+
+// section-6 slider:
+let slider2 = document.getElementById("slider2")
+
+let scrollNext = () => {
+    if (slider2.scrollLeft < slider2.scrollWidth - slider2.offsetWidth) {
+        slider2.scrollTo({
+            left: slider2.scrollLeft + 600,
+            behavior: "smooth"
+        })
+    }
+}
+
+let scrollPrev = () => {
+    if (slider2.scrollLeft > 0) {
+        slider2.scrollTo({
+            left: slider2.scrollLeft - 600,
+            behavior: "smooth"
+        })
+    }
+}
+
+document.getElementById("sliderButtonPrev").addEventListener("click", scrollPrev)
+
+document.getElementById("sliderButtonNext").addEventListener("click", scrollNext)
+
+//end

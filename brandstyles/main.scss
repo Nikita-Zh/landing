@@ -16,6 +16,11 @@ body {
   color: #fff;
   letter-spacing: 1px;
   overflow: hidden;
+
+  // font-size: 10px;
+  @media screen and (max-width: 1249px) {
+    font-size: 8px;
+  }
 }
 
 a {

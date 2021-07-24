@@ -60,12 +60,30 @@ h1,
   letter-spacing: -1px;
 }
 
+@media screen and (max-width: 1249px) {
+  h1,
+  .h1 {
+    font-size: 42px;
+    line-height: 42px;
+    letter-spacing: -1px;
+  }
+}
+
 h2,
 .h2 {
   font-weight: 500;
   font-size: 64px;
   line-height: 64px;
   letter-spacing: -1px;
+}
+
+@media screen and (max-width: 1249px) {
+  h2,
+  .h2 {
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: -1px;
+  }
 }
 
 h3,
@@ -76,10 +94,26 @@ h3,
   letter-spacing: 1px;
 }
 
+@media screen and (max-width: 1249px) {
+  h3,
+  .h3 {
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.5px;
+  }
+}
+
 .subheader {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+}
+
+@media screen and (max-width: 1249px) {
+  .subheader {
+    font-size: 8px;
+    line-height: 12px;
+  }
 }
 
 .first-half {
@@ -178,6 +212,30 @@ h3,
           align-items: center;
   padding: 0;
   margin: 0;
+}
+
+@media screen and (max-width: 1910px) {
+  .section-1 .button-item-5 {
+    display: none;
+  }
+  .section-1 .button-item-4 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .section-1 .button-item-3 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1249px) {
+  .section-1 .button-item-2 {
+    display: none;
+  }
+  .section-1 .button-item-1 {
+    display: none;
+  }
 }
 
 .section-1 .bottom-buttons {
@@ -788,6 +846,13 @@ body {
   color: #fff;
   letter-spacing: 1px;
   overflow: hidden;
+}
+
+@media screen and (max-width: 1249px) {
+  html,
+  body {
+    font-size: 8px;
+  }
 }
 
 a {
