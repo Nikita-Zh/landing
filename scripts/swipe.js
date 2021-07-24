@@ -18,7 +18,7 @@ function Enum(obj) {
 
 
 
-function Swipe(obj, func) {
+function Swipe(obj, func, needDistance) {
 
     const directions = Enum({
         Up: "up",
@@ -29,6 +29,7 @@ function Swipe(obj, func) {
     })
 
     let direction = directions.None;
+    //let swipeDistace = 0;
 
     //Чувствительность — количество пикселей, после которого жест будет считаться свайпом
     const sensitivity = 20;
@@ -89,7 +90,13 @@ function Swipe(obj, func) {
 
         let direction = CheckAction()
         //console.log(e.target)
-        func(obj, direction)
+
+        if (needDistance) {
+            func(obj, direction, distance)
+        } else {
+            func(obj, direction)
+        }
+
 
         //Очищаем позиции
         touchStart = null;
@@ -109,7 +116,7 @@ function Swipe(obj, func) {
 
         if (Math.abs(d.x) > Math.abs(d.y)) //Проверяем, движение по какой оси было длиннее
         {
-            console.log("SWIPE PARAMETERS", Math.abs(d.x), sensitivity)
+            //distance = d.x
             if (Math.abs(d.x) > sensitivity) //Проверяем, было ли движение достаточно длинным
             {
                 if (d.x > 0) //Если значение больше нуля, значит пользователь двигал пальцем справа налево
@@ -123,6 +130,7 @@ function Swipe(obj, func) {
                 }
             }
         } else if (Math.abs(d.y) > sensitivity) { //Аналогичные проверки для вертикальной оси
+            //distance = d.y
             if (d.y > 0) //Свайп вверх
             {
                 // direction = "up"
@@ -136,9 +144,6 @@ function Swipe(obj, func) {
             direction = directions.None.description
         }
 
-
-        console.log("SWIPE DIRECTION: ", direction)
-        console.log("dir == down?: ", direction == "down")
         return direction
     }
 }

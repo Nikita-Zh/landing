@@ -64,20 +64,14 @@ function ScrollY(obj, func) {
             hold = true
             flagScrollStart = true
             lastDirection = currentDirection
-            // console.log("SCROLLING", currentDirection)
             func(obj, currentDirection)
 
             setTimeout(() => {
                 hold = false
-            }, 0);
+            }, 400);
         }
     }
 }
-
-var lastScrollPos = 0;
-var positions = {
-    lastPos: 0
-};
 
 let currentDirection = "none";
 let lastDirection = "none";
@@ -87,7 +81,6 @@ function Scroll(obj, func) {
     obj.addEventListener('wheel', (e) => {
         currentDirection = getWheelchanges(e, func)
         e.stopPropagation();
-
     }, {
         passive: true
     });
@@ -95,15 +88,12 @@ function Scroll(obj, func) {
     obj.addEventListener("wheel", debounce((e) => {
         e.preventDefault();
         flagScrollStart = false
-        // console.log("SO, NOW FLAG IS FUCKING:", flagScrollStart)
-
     }, 70, false), {
         passive: true
     })
 
     obj.addEventListener("wheel", throttle((e) => {
         ScrollY(obj, func)
-        //console.log("ABOBABOBAE2000E")
     }, 40), {
         passive: true
     })

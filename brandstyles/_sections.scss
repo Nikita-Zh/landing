@@ -86,9 +86,10 @@
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
-        overflow-x: auto;
+        //overflow-x: auto;
+        overflow-x: hidden;
         overflow-y: hidden;
-        scroll-snap-type: x mandatory;
+        //scroll-snap-type: x mandatory;
         gap: 12rem;
         height: 80vh;
 
@@ -104,7 +105,7 @@
 
     @mixin slider-item {
         position: relative;
-        scroll-snap-align: center;
+        // scroll-snap-align: center;
         // scroll-snap-stop: always;
         min-width: 45.5rem;
         height: 39rem;
