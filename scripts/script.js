@@ -108,6 +108,7 @@ let positions = [{
 
 const nextNotHozSection = 5;
 const lastNotHozSection = 0;
+let last100HozSection;
 let visited = false;
 const WrapperFunction = (obj, direction) => {
 
@@ -122,21 +123,31 @@ const WrapperFunction = (obj, direction) => {
         currentPosition = 0;
     }
 
+    // console.log("newCurPos", currentPosition)
+
     if (positions[currentPosition].horizontal) {
         if (perc >= 100 && direction == "up" && visited) {
-            visited = false
+            visited = false;
+            last100HozSection = currentPosition - 1;
             positions[currentPosition].objWrapper.scrollTo({
                 top: positions[nextNotHozSection].pos,
                 behavior: 'smooth'
             })
+            // console.log("1111", currentPosition)
             currentPosition = nextNotHozSection
-        } else if (perc >= 100 && direction == "down" && visited) {
-            visited = false
-            positions[currentPosition].objWrapper.scrollTo({
-                top: positions[lastNotHozSection].pos,
+        } else if (perc >= 100 && direction == "down" && !visited) {
+            visited = true
+            positions[currentPosition].obj.scrollTo({
+                top: positions[last100HozSection].pos,
                 behavior: 'smooth'
             })
-            currentPosition = lastNotHozSection
+            positions[currentPosition].objWrapper.scrollTo({
+                top: positions[currentPosition].posWrapper,
+                behavior: 'smooth'
+            })
+            // currentPosition = lastNotHozSection
+            // console.log("2222", currentPosition, last100HozSection)
+            currentPosition = last100HozSection
         } else {
             visited = true
             positions[currentPosition].objWrapper.scrollTo({
@@ -196,6 +207,7 @@ let changeProgressBar = (ev) => {
     } else {
         perc = currScrollPos / ((scrollWidth - right) * 1.05) * 100 + 5
     }
+    // console.log(right, scrollWidth, currScrollPos)
 
     elements.progressBar.style.transform = `translate(-9rem, 0) translate(${perc}%, 0)`
 }
