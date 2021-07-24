@@ -3,7 +3,8 @@ const elements = {
     sections: document.querySelectorAll(".section"),
     scrollerWrapper: document.getElementById("slider_section-2"),
     scrollerItems: document.querySelectorAll('.slider-item'),
-    window: window
+    window: window,
+    progressBar: document.getElementById("slider__progress")
 }
 
 const getCoords = (elem) => {
@@ -105,8 +106,12 @@ let positions = [{
     },
 ]
 
-
+const nextNotHozSection = 5;
+const lastNotHozSection = 0;
+let visited = false;
 const WrapperFunction = (obj, direction) => {
+
+
 
 
     if (direction === 'up' && currentPosition < positions.length - 1) {
@@ -118,16 +123,33 @@ const WrapperFunction = (obj, direction) => {
     }
 
     if (positions[currentPosition].horizontal) {
-
-        positions[currentPosition].objWrapper.scrollTo({
-            top: positions[currentPosition].posWrapper,
-            behavior: 'smooth'
-        })
-        positions[currentPosition].obj.scrollTo({
-            left: positions[currentPosition].pos,
-            behavior: 'smooth'
-        })
+        if (perc >= 100 && direction == "up" && visited) {
+            visited = false
+            positions[currentPosition].objWrapper.scrollTo({
+                top: positions[nextNotHozSection].pos,
+                behavior: 'smooth'
+            })
+            currentPosition = nextNotHozSection
+        } else if (perc >= 100 && direction == "down" && visited) {
+            visited = false
+            positions[currentPosition].objWrapper.scrollTo({
+                top: positions[lastNotHozSection].pos,
+                behavior: 'smooth'
+            })
+            currentPosition = lastNotHozSection
+        } else {
+            visited = true
+            positions[currentPosition].objWrapper.scrollTo({
+                top: positions[currentPosition].posWrapper,
+                behavior: 'smooth'
+            })
+            positions[currentPosition].obj.scrollTo({
+                left: positions[currentPosition].pos,
+                behavior: 'smooth'
+            })
+        }
     } else {
+        visited = false
         positions[currentPosition].obj.scrollTo({
             top: positions[currentPosition].pos,
             behavior: 'smooth'
@@ -156,3 +178,26 @@ Swipe(elements.sectionsWrapper, WrapperFunction, false)
 //     console.log('scroll SCROLLER end, 22771190139123-090913910230')
 //     flagScrollStart = false
 // }, 800, false))
+
+
+let right
+let scrollWidth
+let currScrollPos
+let perc = 0
+let changeProgressBar = (ev) => {
+    //ev.preventDefault()
+    right = elements.scrollerWrapper.getBoundingClientRect().right
+
+    scrollWidth = elements.scrollerWrapper.scrollWidth
+    currScrollPos = elements.scrollerWrapper.scrollLeft
+
+    if (right == scrollWidth) {
+        perc = 100
+    } else {
+        perc = currScrollPos / ((scrollWidth - right) * 1.05) * 100 + 5
+    }
+
+    elements.progressBar.style.transform = `translate(-9rem, 0) translate(${perc}%, 0)`
+}
+changeProgressBar()
+elements.scrollerWrapper.addEventListener("scroll", changeProgressBar)
