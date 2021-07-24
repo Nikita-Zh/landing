@@ -8,10 +8,15 @@ const elements = {
 }
 
 const getCoords = (elem) => {
-    let box = elem.getBoundingClientRect();
+    // let box = elem.getBoundingClientRect();
+    // return {
+    //     top: box.top, // + pageYOffset,
+    //     left: box.left, // + pageXOffset
+    // };
+    //let box = elem.getBoundingClientRect();
     return {
-        top: box.top + pageYOffset,
-        left: box.left + pageXOffset
+        top: elem.offsetTop, // + pageYOffset,
+        left: elem.offsetLeft, // + pageXOffset
     };
 }
 
@@ -39,6 +44,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener('resize', debounce(() => {
         sectionsTop = getTopOfElements(elements.sections)
         scrollerItemsLeft = getLeftOfElements(elements.scrollerItems)
+        UpdatePositions();
+        // console.log("ABOBASSACCACA")
+        // console.log(sectionsTop)
+        // console.log(scrollerItemsLeft)
     }, 0, false))
 });
 
@@ -48,67 +57,72 @@ console.log(scrollerItemsLeft)
 
 let currentPosition = 0;
 
-let positions = [{
-        obj: elements.window,
-        pos: sectionsTop[0],
-        horizontal: false
-    },
-    {
-        objWrapper: elements.window,
-        posWrapper: sectionsTop[1],
-        obj: elements.scrollerWrapper,
-        pos: scrollerItemsLeft[0],
-        horizontal: true
-    },
-    {
-        objWrapper: elements.window,
-        posWrapper: sectionsTop[1],
-        obj: elements.scrollerWrapper,
-        pos: scrollerItemsLeft[1],
-        horizontal: true
-    }, {
-        objWrapper: elements.window,
-        posWrapper: sectionsTop[1],
-        obj: elements.scrollerWrapper,
-        pos: scrollerItemsLeft[2],
-        horizontal: true
-    },
-    {
-        objWrapper: elements.window,
-        posWrapper: sectionsTop[1],
-        obj: elements.scrollerWrapper,
-        pos: scrollerItemsLeft[3],
-        horizontal: true
-    },
-    {
-        obj: elements.window,
-        pos: sectionsTop[2],
-        horizontal: false
-    }, {
-        obj: elements.window,
-        pos: sectionsTop[3],
-        horizontal: false
-    },
-    {
-        obj: elements.window,
-        pos: sectionsTop[4],
-        horizontal: false
-    },
-    {
-        obj: elements.window,
-        pos: sectionsTop[5],
-        horizontal: false
-    },
-    {
-        obj: elements.window,
-        pos: sectionsTop[6],
-        horizontal: false
-    },
-]
+let positions = []
 
+const UpdatePositions = () => {
+    positions = [{
+            obj: elements.window,
+            pos: sectionsTop[0],
+            horizontal: false
+        },
+        {
+            objWrapper: elements.window,
+            posWrapper: sectionsTop[1],
+            obj: elements.scrollerWrapper,
+            pos: scrollerItemsLeft[0],
+            horizontal: true
+        },
+        {
+            objWrapper: elements.window,
+            posWrapper: sectionsTop[1],
+            obj: elements.scrollerWrapper,
+            pos: scrollerItemsLeft[1],
+            horizontal: true
+        }, {
+            objWrapper: elements.window,
+            posWrapper: sectionsTop[1],
+            obj: elements.scrollerWrapper,
+            pos: scrollerItemsLeft[2],
+            horizontal: true
+        },
+        {
+            objWrapper: elements.window,
+            posWrapper: sectionsTop[1],
+            obj: elements.scrollerWrapper,
+            pos: scrollerItemsLeft[3],
+            horizontal: true
+        },
+        {
+            obj: elements.window,
+            pos: sectionsTop[2],
+            horizontal: false
+        }, {
+            obj: elements.window,
+            pos: sectionsTop[3],
+            horizontal: false
+        },
+        {
+            obj: elements.window,
+            pos: sectionsTop[4],
+            horizontal: false
+        },
+        {
+            obj: elements.window,
+            pos: sectionsTop[5],
+            horizontal: false
+        },
+        {
+            obj: elements.window,
+            pos: sectionsTop[6],
+            horizontal: false
+        },
+    ]
+}
+
+UpdatePositions()
 const nextNotHozSection = 5;
 const lastNotHozSection = 0;
-let last100HozSection;
+let last100HozSection = nextNotHozSection - 1;
 let visited = false;
 const WrapperFunction = (obj, direction) => {
 
