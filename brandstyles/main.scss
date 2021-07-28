@@ -7,44 +7,48 @@
 @import "sections";
 @import "navbar";
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 html,
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Alegreya Sans', sans-serif;
-  color: #fff;
-  letter-spacing: 1px;
-  overflow: hidden;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #fff;
+    letter-spacing: 1px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 
-  // font-size: 10px;
-  @media screen and (max-width: 1249px) {
-    font-size: 8px;
-  }
+    @media screen and (max-width: 1249px) {
+        font-size: 8px;
+    }
 }
 
 a {
-  text-decoration: none;
-  display: block;
+    text-decoration: none;
+    display: block;
 }
 
-// .scroller {
-//   height: 100vh;
-//   overflow-y: scroll;
-//   scroll-snap-type: y mandatory;
-//   overflow-x: hidden;
-// }
+.wrapper {
 
-// .scroller section {
-//   scroll-snap-align: start;
-//   scroll-snap-stop: always;
-//   min-height: 100%;
-// }
+    position: relative;
+    // overflow: hidden;
 
-// .section-title {
-//   display: inline-block;
-//   padding-top: 3rem;
-// }
+    section {
+        position: relative;
+        height: 100vh;
+        // overflow: hidden;
+        box-sizing: border-box;
+        cursor: default;
+    }
+}
+
+.section__title {
+    display: inline-block;
+    padding-top: 3rem;
+}
 
 // .first-half {
 //   position: relative;
@@ -57,46 +61,3 @@ a {
 //   width: 50%;
 
 // }
-
-
-.section__wrapper {
-  // height: 100vh;
-  // width: 100%;
-  // height: 100%;
-  // overflow-y: scroll;
-  // scroll-snap-type: y mandatory;
-  // overflow-x: hidden;
-  position: relative;
-  overflow: hidden;
-}
-
-.section__wrapper section {
-  // scroll-snap-align: start;
-  // scroll-snap-stop: always;
-  // min-height: 100%;
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  //font-size: 10vmin;
-  //padding: 1em;
-  box-sizing: border-box;
-  //color: hsla(0, 0%, 100%, .1);
-  cursor: default;
-}
-
-.section-title {
-  display: inline-block;
-  padding-top: 3rem;
-}
-
-.first-half {
-  position: relative;
-  width: 50%;
-
-}
-
-.second-half {
-  position: relative;
-  width: 50%;
-
-}

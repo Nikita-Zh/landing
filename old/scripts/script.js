@@ -1,11 +1,10 @@
 const elements = {
-    sectionsWrapper: document.getElementById("wrapper"),
+    sectionsWrapper: document.getElementById("section-wrapper"),
     sections: document.querySelectorAll(".section"),
-    scrollerWrapper: document.getElementById("slider-section-2"),
-    scrollerItems: document.querySelectorAll('.slider__item'),
+    scrollerWrapper: document.getElementById("slider_section-2"),
+    scrollerItems: document.querySelectorAll('.slider-item'),
     window: window,
-    progressBar: document.getElementById("slider__progress"),
-    sliderSection6: document.getElementById("slider-section-6"),
+    progressBar: document.getElementById("slider__progress")
 }
 
 const getCoords = (elem) => {
@@ -231,21 +230,21 @@ elements.scrollerWrapper.addEventListener("scroll", changeProgressBar)
 
 
 // section-6 slider:
-
+let slider2 = document.getElementById("slider2")
 
 let scrollNext = () => {
-    if (elements.sliderSection6.scrollLeft < elements.sliderSection6.scrollWidth - elements.sliderSection6.offsetWidth) {
-        elements.sliderSection6.scrollTo({
-            left: elements.sliderSection6.scrollLeft + 600,
+    if (slider2.scrollLeft < slider2.scrollWidth - slider2.offsetWidth) {
+        slider2.scrollTo({
+            left: slider2.scrollLeft + 600,
             behavior: "smooth"
         })
     }
 }
 
 let scrollPrev = () => {
-    if (elements.sliderSection6.scrollLeft > 0) {
-        elements.sliderSection6.scrollTo({
-            left: elements.sliderSection6.scrollLeft - 600,
+    if (slider2.scrollLeft > 0) {
+        slider2.scrollTo({
+            left: slider2.scrollLeft - 600,
             behavior: "smooth"
         })
     }

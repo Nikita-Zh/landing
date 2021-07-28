@@ -1,8 +1,8 @@
 const NavBarElements = {
     sectionTrigger: document.getElementById("section-2"),
     navbar: document.querySelector(".navbar"),
-    navbarItems: document.querySelectorAll(".navbar .navbar__item"),
-    navbarBackground: document.querySelector(".navbar .navbar__background")
+    navbarItems: document.querySelectorAll(".navbar .navbar-item"),
+    navbarBackground: document.querySelector(".navbar .navbar-item__background")
 }
 
 let once = true;
