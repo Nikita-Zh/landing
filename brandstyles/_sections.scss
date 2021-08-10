@@ -31,49 +31,55 @@
         .nav__button {
             color: #fff;
             font-weight: 500;
-            font-size: 32px;
-            line-height: 32px;
-            min-height: 38px;
+            // font-size: 32px;
+            // line-height: 32px;
+            // min-height: 38px;
+            //font-size: 2rem;
+            //line-height: 2rem;
+            //min-height: 2.375rem;
             display: flex;
             align-items: center;
             padding: 0;
             margin: 0;
 
-            @media screen and (max-width: 1910px) {
-                &-5 {
-                    display: none;
-                }
+            // @media screen and (max-width: 1910px) {
+            //     &-5 {
+            //         display: none;
+            //     }
 
-                &-4 {
-                    display: none;
-                }
-            }
+            //     &-4 {
+            //         display: none;
+            //     }
+            // }
 
-            @media screen and (max-width: 1550px) {
-                &-3 {
-                    display: none;
-                }
+            // @media screen and (max-width: 1550px) {
+            //     &-3 {
+            //         display: none;
+            //     }
 
-            }
+            // }
 
-            @media screen and (max-width: 1249px) {
-                &-2 {
-                    display: none;
-                }
+            // @media screen and (max-width: 1249px) {
+            //     &-2 {
+            //         display: none;
+            //     }
 
-                &-1 {
-                    display: none;
-                }
-            }
+            //     &-1 {
+            //         display: none;
+            //     }
+            // }
         }
 
         .nav__logo {
             background-image: url("/sources/Logo/Forfis.svg");
-            width: 112px;
-            height: 38px;
+            // width: 112px;
+            // height: 38px;
             background-repeat: no-repeat;
             padding-bottom: 1rem;
             box-sizing: content-box;
+            background-size: contain;
+            width: 7rem;
+            height: 2.375rem;
         }
     }
 
@@ -449,12 +455,15 @@
     }
 
     .slider__item {
+        //font-size: (1rem - 1vmin);
         position: relative;
         scroll-snap-align: center;
         //scroll-snap-stop: always;
-        min-width: 29rem;
+        //min-width: 29rem;
         max-width: 29rem;
-        height: 39rem;
+        max-height: 39rem;
+        min-width: (55vmin * 0.78);
+        height: 55vmin;
         // border: 2px solid #fff;
         border-radius: 1rem;
 

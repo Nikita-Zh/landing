@@ -56,7 +56,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // console.log(sectionsTop)
 // console.log(scrollerItemsLeft)
 
-let currentPosition = 0;
+
+
+let currentPosition;
+
+if (localStorage.currentPosition == null) {
+    currentPosition = 0
+} else {
+    currentPosition = localStorage.currentPosition
+}
+const SetPosition = () => {
+    localStorage.currentPosition = currentPosition;
+}
 
 let positions = []
 
@@ -125,10 +136,8 @@ const nextNotHozSection = 5;
 const lastNotHozSection = 0;
 let last100HozSection = nextNotHozSection - 1;
 let visited = false;
+
 const WrapperFunction = (obj, direction) => {
-
-
-
 
     if (direction === 'up' && currentPosition < positions.length - 1) {
         currentPosition++;
@@ -182,6 +191,7 @@ const WrapperFunction = (obj, direction) => {
         })
     }
 
+    SetPosition();
 }
 
 
