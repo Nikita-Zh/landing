@@ -19,8 +19,6 @@ let threshold = document.getElementById("section-1").getBoundingClientRect().hei
 window.addEventListener('scroll', function () {
     // const posTop = NavBarElements.sectionTrigger.getBoundingClientRect().top;
     sectionTriggerPosTop = NavBarElements.sectionTrigger.getBoundingClientRect().top;
-    console.log(threshold)
-    console.log(sectionTriggerPosTop)
     NavBarElements.navbar.classList.toggle('hidden', sectionTriggerPosTop <= threshold);
     if (once) {
         // first initialize //
@@ -41,11 +39,13 @@ window.addEventListener("resize", debounce(function () {
     threshold = document.getElementById("section-1").getBoundingClientRect().height - 50;
 
     sectionTriggerPosTop = NavBarElements.sectionTrigger.getBoundingClientRect().top;
-    console.log('RESIZE', threshold)
-    console.log('RESIZE', sectionTriggerPosTop)
     NavBarElements.navbarBackground.style.width = currentNavItem.offsetWidth + "px"
     NavBarElements.navbarBackground.style.left = currentNavItem.offsetLeft + "px"
-    console.log("ASDAKLSMDKMAS")
+    // console.log("ASDAKLSMDKMAS")
+
+
+    // console.log(`vw: ${window.innerWidth / 100}px vh: ${window.innerHeight / 100}px, vw/vh: ${window.innerWidth / window.innerHeight}`);
+
 }, 190, false))
 
 

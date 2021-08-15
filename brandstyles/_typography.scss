@@ -67,14 +67,31 @@
 //     // letter-spacing: -1px;
 //   }
 // }
-
+@function calcViewRatio() {
+  @if ((1vw / 1vh) > 2) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
 @function calcFluidFontSize($f-min, $f-max, $v-min, $v-max, $units: px) {
   $k: ($f-max - $f-min)/ ($v-max - $v-min);
   $b: $f-min - $k * $v-min;
 
   $b: $b + $units;
 
+  // @if (100vw / 100vh > 1) {
   @return calc(#{$k} * 100vw + #{$b});
+}
+
+@function calcFluidFontSize2($f-min, $f-max, $v-min, $v-max, $units: px) {
+  $k: ($f-max - $f-min)/ ($v-max - $v-min);
+  $b: $f-min - $k * $v-min;
+
+  $b: $b + $units;
+
+  // @if (100vw / 100vh > 1) {
+  @return calc(#{$k} * 100vh * 1.5 + #{$b});
 }
 
 h1,
@@ -172,10 +189,22 @@ h3,
 
 html {
   font-size: 16px;
+
   font-size: calcFluidFontSize(0.5, 1, 63, 120, rem);
+
+  &.vh {
+    font-size: calcFluidFontSize2(0.5, 1, 63, 120, rem);
+  }
+
   @media screen and (max-width: 1000px) {
     font-size: 8px;
   }
+  @media screen and (max-width: 400px) {
+    font-size: calcFluidFontSize(0.38, 0.5, 19, 25, rem);
+  }
+  // @media screen and (min-width: 1920px) {
+  //   font-size: 16px;
+  // }
 
   // @media screen and (max-width: 1920px) {
   //   //font-size: 14px;

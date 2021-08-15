@@ -5,6 +5,10 @@
   padding: 0 5.75rem;
   background-color: #000;
 
+  @media screen and (max-width: 800px) {
+    padding: 0 3rem;
+  }
+
   .video {
     position: absolute;
     left: 0;
@@ -72,6 +76,9 @@
   .header__burger {
     display: none;
     z-index: 1;
+    height: 100%;
+    margin-right: -3rem;
+    padding-right: 3rem;
 
     .header__burger_icon {
       display: flex;
@@ -455,6 +462,7 @@
 
   .section__buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     //padding-top: 3rem;
     padding: 3rem 0 0 5.75rem;
@@ -520,6 +528,7 @@
 
   .slider__container {
     display: flex;
+
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
@@ -538,14 +547,20 @@
 
   .slider__item {
     //font-size: (1rem - 1vmin);
+    flex-shrink: 0;
     position: relative;
     scroll-snap-align: center;
     //scroll-snap-stop: always;
     //min-width: 29rem;
-    max-width: 29rem;
-    max-height: 39rem;
-    min-width: (55vmin * 0.78);
-    height: 55vmin;
+
+    // max-width: 29rem;
+    // max-height: 39rem;
+    // min-width: (55vmin * 0.78);
+    // height: 55vmin;
+
+    width: 30rem;
+    height: 40rem;
+
     // border: 2px solid #fff;
     border-radius: 1rem;
 

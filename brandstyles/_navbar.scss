@@ -1,72 +1,69 @@
 .navbar__wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    bottom: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
 
-    z-index: 3;
+  bottom: 3rem;
+
+  z-index: 3;
 }
 
 .navbar {
+  border-radius: 4rem;
+  padding: 1rem;
+  background: rgba(244, 244, 244, 0.8);
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  opacity: 0;
+  transition: 0.3s;
+  backdrop-filter: blur(8px);
+
+  &.hidden {
+    // display: none;
+    opacity: 1;
+  }
+
+  .navbar__background {
     border-radius: 4rem;
-    padding: 1rem;
-    background: rgba(244, 244, 244, 0.8);
-    display: flex;
-    gap: 1rem;
-    position: relative;
-    opacity: 0;
-    transition: .3s;
-    backdrop-filter: blur(8px);
+    background: #000;
+    position: absolute;
+    // width: 100px;
+    //width: (100% / 4);
+    height: 4rem;
+    top: 1rem;
+    z-index: 0;
+    transition: 0.2s ease-in-out;
+  }
 
-    &.hidden {
-        // display: none;
-        opacity: 1;
+  .navbar__item {
+    padding: 1rem 1.5rem;
+    color: black;
+    border-radius: 4rem;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:active,
+    &:focus {
+      outline: none;
     }
 
-    .navbar__background {
-        border-radius: 4rem;
-        background: #000;
-        position: absolute;
-        // width: 100px;
-        //width: (100% / 4);
-        height: 4rem;
-        top: 1rem;
-        z-index: 0;
-        transition: .2s ease-in-out;
-
+    &:hover {
+      color: rgb(80, 80, 80);
     }
 
-    .navbar__item {
-        padding: 1rem 1.5rem;
-        color: black;
-        border-radius: 4rem;
-        z-index: 1;
-        cursor: pointer;
-        transition: .2s;
-
-        &:active,
-        &:focus {
-            outline: none;
-        }
-
-        &:hover {
-            color: rgb(80, 80, 80);
-        }
-
-        &::-moz-focus-inner {
-            border: 0;
-        }
-
-        &.is-active {
-            //sbackground: #000;
-            color: #fff;
-        }
-
+    &::-moz-focus-inner {
+      border: 0;
     }
+
+    &.is-active {
+      //sbackground: #000;
+      color: #fff;
+    }
+  }
 }
-
-
 
 // .menu--alonso .menu__item:nth-child(1).menu__item--current~.menu__line {
 //     -webkit-transform: translate3d(0, 0, 0);

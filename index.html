@@ -226,6 +226,13 @@
         <section class="section section-6">
             <h3 class="section__title">Текущие проекты</h3>
             <div class="section__buttons">
+
+                <a href="" class="button detailed h3">
+                    Новые проекты 60
+                </a>
+                <a href="" class="button detailed h3">
+                    Всё портфолио
+                </a>
                 <a href="" class="button detailed h3">
                     Приложения
                 </a>
@@ -238,6 +245,7 @@
                 <a href="" class="button detailed h3">
                     Продвижение
                 </a>
+
             </div>
 
             <div class="slider">
@@ -264,7 +272,7 @@
                 <div class="slider__container" id="slider-section-6">
                     <div class="slider__item slider__item_1" id="slider__item">
                         <div class="slider__content">
-                            <h3>ООО «Водаком»</h3>
+
                             <h2 class="second-line">Водаком</h2>
                             <div class="tag-container">
                                 <span class="button tag subheader">Приложение</span>
@@ -280,7 +288,7 @@
                     </div>
                     <div class="slider__item slider__item_2" id="slider__item">
                         <div class="slider__content">
-                            <h3>Цифровые технологии</h3>
+
                             <h2 class="second-line">Достоприме-
                                 чательности</h2>
                             <div class="tag-container">
@@ -298,7 +306,7 @@
                     </div>
                     <div class="slider__item slider__item_3" id="slider__item">
                         <div class="slider__content">
-                            <h3>Павел Фесенко</h3>
+
                             <h2 class="second-line">Спроси
                                 Психолога</h2>
                             <div class="tag-container">
@@ -316,7 +324,7 @@
                     </div>
                     <div class="slider__item slider__item_4" id="slider__item">
                         <div class="slider__content">
-                            <h3>Павел Фесенко</h3>
+
                             <h2 class="second-line">Спроси
                                 Психолога</h2>
                             <div class="tag-container">
@@ -335,7 +343,7 @@
                     </div>
                     <div class="slider__item slider__item_5" id="slider__item">
                         <div class="slider__content">
-                            <h3>Павел Фесенко</h3>
+
                             <h2 class="second-line">Спроси
                                 Психолога</h2>
                             <div class="tag-container">
@@ -390,6 +398,19 @@
     <script src="./scripts/script.js"></script>
     <script src="./scripts/navbar.js"></script>
     <script src="./scripts/burger.js"></script>
+
+    <script>
+        let htmlElement = document.querySelector("html");
+        console.log(`vw: ${window.innerWidth / 100}px vh: ${window.innerHeight / 100}px, vw/vh: ${window.innerWidth / window.innerHeight}`);
+        window.addEventListener('resize', function () {
+            if (window.innerWidth / window.innerHeight > 2) {
+                htmlElement.classList.add("vh")
+            } else {
+                htmlElement.classList.remove("vh")
+            }
+        })
+
+    </script>
 
 </body>
 
