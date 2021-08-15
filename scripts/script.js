@@ -73,61 +73,61 @@ let positions = []
 
 const UpdatePositions = () => {
     positions = [{
-            obj: elements.window,
-            pos: sectionsTop[0],
-            horizontal: false
-        },
-        {
-            objWrapper: elements.window,
-            posWrapper: sectionsTop[1],
-            obj: elements.scrollerWrapper,
-            pos: scrollerItemsLeft[0],
-            horizontal: true
-        },
-        {
-            objWrapper: elements.window,
-            posWrapper: sectionsTop[1],
-            obj: elements.scrollerWrapper,
-            pos: scrollerItemsLeft[1],
-            horizontal: true
-        }, {
-            objWrapper: elements.window,
-            posWrapper: sectionsTop[1],
-            obj: elements.scrollerWrapper,
-            pos: scrollerItemsLeft[2],
-            horizontal: true
-        },
-        {
-            objWrapper: elements.window,
-            posWrapper: sectionsTop[1],
-            obj: elements.scrollerWrapper,
-            pos: scrollerItemsLeft[3],
-            horizontal: true
-        },
-        {
-            obj: elements.window,
-            pos: sectionsTop[2],
-            horizontal: false
-        }, {
-            obj: elements.window,
-            pos: sectionsTop[3],
-            horizontal: false
-        },
-        {
-            obj: elements.window,
-            pos: sectionsTop[4],
-            horizontal: false
-        },
-        {
-            obj: elements.window,
-            pos: sectionsTop[5],
-            horizontal: false
-        },
-        {
-            obj: elements.window,
-            pos: sectionsTop[6],
-            horizontal: false
-        },
+        obj: elements.window,
+        pos: sectionsTop[0],
+        horizontal: false
+    },
+    {
+        objWrapper: elements.window,
+        posWrapper: sectionsTop[1],
+        obj: elements.scrollerWrapper,
+        pos: scrollerItemsLeft[0],
+        horizontal: true
+    },
+    {
+        objWrapper: elements.window,
+        posWrapper: sectionsTop[1],
+        obj: elements.scrollerWrapper,
+        pos: scrollerItemsLeft[1],
+        horizontal: true
+    }, {
+        objWrapper: elements.window,
+        posWrapper: sectionsTop[1],
+        obj: elements.scrollerWrapper,
+        pos: scrollerItemsLeft[2],
+        horizontal: true
+    },
+    {
+        objWrapper: elements.window,
+        posWrapper: sectionsTop[1],
+        obj: elements.scrollerWrapper,
+        pos: scrollerItemsLeft[3],
+        horizontal: true
+    },
+    {
+        obj: elements.window,
+        pos: sectionsTop[2],
+        horizontal: false
+    }, {
+        obj: elements.window,
+        pos: sectionsTop[3],
+        horizontal: false
+    },
+    {
+        obj: elements.window,
+        pos: sectionsTop[4],
+        horizontal: false
+    },
+    {
+        obj: elements.window,
+        pos: sectionsTop[5],
+        horizontal: false
+    },
+    {
+        obj: elements.window,
+        pos: sectionsTop[6],
+        horizontal: false
+    },
     ]
 }
 
@@ -179,7 +179,7 @@ const WrapperFunction = (obj, direction) => {
                 behavior: 'smooth'
             })
             positions[currentPosition].obj.scrollTo({
-                left: positions[currentPosition].pos,
+                left: positions[currentPosition].pos - 20,
                 behavior: 'smooth'
             })
         }

@@ -68,16 +68,14 @@
 //   }
 // }
 
-
 @function calcFluidFontSize($f-min, $f-max, $v-min, $v-max, $units: px) {
-  $k: ($f-max - $f-min)/($v-max - $v-min);
+  $k: ($f-max - $f-min)/ ($v-max - $v-min);
   $b: $f-min - $k * $v-min;
 
   $b: $b + $units;
 
   @return calc(#{$k} * 100vw + #{$b});
 }
-
 
 h1,
 h2,
@@ -97,54 +95,72 @@ h6,
 h1,
 .h1 {
   font-weight: 700;
-  // font-size: 5.25rem;
-  line-height: 5.25rem;
+  font-size: 5.25rem;
+  line-height: 100%;
   letter-spacing: -1px;
 
   // font-size: calc((100vw - 63rem) / (120 - 30) * (5.75 - 2.5) + 2.5rem);
-  font-size: calcFluidFontSize(2.5, 5.75, 63, 120, rem);
+
+  // font-size: calcFluidFontSize(2.5, 5.75, 63, 120, rem);
+
   // @media screen and (max-width: 1249px) {
   //   font-size: 42px;
   //   line-height: 42px;
   //   letter-spacing: -1px;
   // }
+  @media screen and (max-width: 1000px) {
+    font-size: 5rem;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
 }
 
 h2,
 .h2 {
   font-weight: 500;
-  // font-size: 4rem;
-  line-height: 4rem;
+  font-size: 4rem;
+  line-height: 100%;
   letter-spacing: -1px;
   //font-size: ((100vw - 63rem) / (120 - 30) * (4 - 1.875) + 1.875rem);
-  font-size: calcFluidFontSize(1.875, 4, 63, 120, rem);
+
+  // font-size: calcFluidFontSize(1.875, 4, 63, 120, rem);
+
   // @media screen and (max-width: 1249px) {
   //   font-size: 32px;
   //   line-height: 32px;
   //   letter-spacing: -1px;
   // }
+  @media screen and (max-width: 1000px) {
+    font-size: 3.75rem;
+    letter-spacing: -1px;
+  }
 }
 
 h3,
 .h3 {
   font-weight: 500;
-  //font-size: 2rem;
-  line-height: 2rem;
+  font-size: 2rem;
+  line-height: 100%;
   letter-spacing: 1px;
   //font-size: calc((100vw - 63rem) / (120 - 30) * (2 - 1) + 1rem);
-  font-size: calcFluidFontSize(1, 2, 63, 120, rem);
+
+  // font-size: calcFluidFontSize(1, 2, 63, 120, rem);
 
   // @media screen and (max-width: 1249px) {
   //   font-size: 16px;
   //   line-height: 16px;
   //   letter-spacing: -0.5px;
   // }
+  @media screen and (max-width: 1000px) {
+    // font-size: 1rem;
+    //letter-spacing: -0.5px;
+  }
 }
 
 .subheader {
   font-weight: 500;
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 150%;
 
   //letter-spacing: 1px;
   // @media screen and (max-width: 1249px) {
@@ -155,9 +171,11 @@ h3,
 }
 
 html {
-
   font-size: 16px;
   font-size: calcFluidFontSize(0.5, 1, 63, 120, rem);
+  @media screen and (max-width: 1000px) {
+    font-size: 8px;
+  }
 
   // @media screen and (max-width: 1920px) {
   //   //font-size: 14px;

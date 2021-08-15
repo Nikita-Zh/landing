@@ -1,25 +1,25 @@
 svg {
-    /* width: 200px; */
-    height: 80px;
-    cursor: pointer;
+  /* width: 200px; */
+  height: 5rem;
+  cursor: pointer;
 }
 
 .circle_lg {
-    stroke-dasharray: 600px 1500px;
-    transition: all .5s;
+  stroke-dasharray: 600px 1500px;
+  transition: all 0.5s;
 }
 
 .circle_sm {
-    opacity: 1;
-    transition: all .25s;
+  opacity: 1;
+  transition: all 0.25s;
 }
 
 svg.mute .circle_lg {
-    /* stroke-dashoffset: -1360px; */
-    stroke-dashoffset: -1470px;
-    transform: rotate(26deg) scale(1, 2) translate(100px, -350px);
+  /* stroke-dashoffset: -1360px; */
+  stroke-dashoffset: -1470px;
+  transform: rotate(26deg) scale(1, 2) translate(100px, -350px);
 }
 
 svg.mute .circle_sm {
-    opacity: 0;
+  opacity: 0;
 }
