@@ -482,7 +482,7 @@ html.vh {
   overflow: hidden;
   position: absolute;
   bottom: 1rem;
-  left: calc(50% - 6.5rem);
+  left: calc(50% - 4.5rem);
   width: 9rem;
   height: 0.4rem;
   background-color: rgba(255, 255, 255, 0.2);
