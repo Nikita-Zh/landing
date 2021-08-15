@@ -18,13 +18,36 @@
 
 <body>
     <div class="wrapper" id="wrapper">
-        <section class="section section-1">
+        <section class="section section-1" id="section-1">
 
             <!-- <video class="video" autoplay muted loop>
                 <source src="./sources/videos/Tree - 53355.mp4" type="video/mp4">
             </video> -->
 
-            <nav class="nav">
+            <header class="header">
+                <div class="header__logo"></div>
+                <nav class="nav">
+                    <div class="nav__buttons">
+                        <a href="" class="nav__button nav__button-1 h3">Наши сервисы</a>
+                        <a href="" class="nav__button nav__button-2 h3">Мобильная разработка</a>
+                        <a href="" class="nav__button nav__button-3 h3">Создание сайтов</a>
+                        <a href="" class="nav__button nav__button-4 h3">Чат-боты</a>
+                        <a href="" class="nav__button nav__button-5 h3">Продвижение</a>
+                    </div>
+                    <div class="nav__buttons">
+                        <a href="" class="button login h3">Войти в аккаунт</a>
+                    </div>
+                </nav>
+                <div class="header__burger h3">Меню
+                    <div class="header__burger_icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- <nav class="nav">
                 <div class="nav__buttons">
                     <div class="nav__logo"></div>
                     <a href="" class="nav__button nav__button-1 h3">Наши сервисы</a>
@@ -36,7 +59,21 @@
                 <div class="nav__buttons">
                     <a href="" class="button login h3">Войти в аккаунт</a>
                 </div>
-            </nav>
+            </nav> -->
+
+            <!-- <nav class="navBurger">
+                <div class="nav__buttons">
+                    <div class="nav__logo"></div>
+                    <a href="" class="nav__button nav__button-1 h3">Наши сервисы</a>
+                    <a href="" class="nav__button nav__button-2 h3">Мобильная разработка</a>
+                    <a href="" class="nav__button nav__button-3 h3">Создание сайтов</a>
+                    <a href="" class="nav__button nav__button-4 h3">Чат-боты</a>
+                    <a href="" class="nav__button nav__button-5 h3">Продвижение</a>
+                </div>
+                <div class="nav__buttons">
+                    <a href="" class="button login h3">Войти в аккаунт</a>
+                </div>
+            </nav> -->
 
             <div class="section__content">
                 <h2>Реализуем нереальное.<br>
@@ -122,7 +159,7 @@
             <div class="section__left-container">
                 <h3 class="section__title">Текущие проекты</h3>
                 <div class="section__content">
-                    <h2>Вода в Пскове</h2>
+                    <h2>Водаком</h2>
                     <h1>Мобильное приложение
                         для заказа воды в Пскове</h1>
                 </div>
@@ -141,7 +178,7 @@
             <div class="section__left-container">
                 <h3 class="section__title">Текущие проекты</h3>
                 <div class="section__content">
-                    <h2>Цифровые технологии</h2>
+                    <h2>Кратко о городе</h2>
                     <h1>Лучший вариант путешествий по России</h1>
                 </div>
                 <a href="" class="button detailed h3">
@@ -352,6 +389,7 @@
     <script src="./scripts/scroll.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/navbar.js"></script>
+    <script src="./scripts/burger.js"></script>
 
 </body>
 

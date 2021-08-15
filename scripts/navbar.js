@@ -8,14 +8,20 @@ const NavBarElements = {
 let once = true;
 let currentNavItemIndex;
 let currentNavItem;
+let sectionTriggerPosTop;
 if (localStorage.currentNavItemIndex == null) {
     currentNavItemIndex = NavBarElements.navbarItems.length - 1
 } else {
     currentNavItemIndex = localStorage.currentNavItemIndex
 }
+
+let threshold = document.getElementById("section-1").getBoundingClientRect().height - 50;
 window.addEventListener('scroll', function () {
-    const posTop = NavBarElements.sectionTrigger.getBoundingClientRect().top;
-    NavBarElements.navbar.classList.toggle('hidden', posTop <= 800);
+    // const posTop = NavBarElements.sectionTrigger.getBoundingClientRect().top;
+    sectionTriggerPosTop = NavBarElements.sectionTrigger.getBoundingClientRect().top;
+    console.log(threshold)
+    console.log(sectionTriggerPosTop)
+    NavBarElements.navbar.classList.toggle('hidden', sectionTriggerPosTop <= threshold);
     if (once) {
         // first initialize //
         //let initializedItem = NavBarElements.navbarItems[NavBarElements.navbarItems.length - 1]
@@ -32,6 +38,11 @@ window.addEventListener('scroll', function () {
 window.addEventListener("resize", debounce(function () {
     // let initializedItem = NavBarElements.navbarItems[currentNavItemIndex]
     // initializedItem.classList.add("is-active")
+    threshold = document.getElementById("section-1").getBoundingClientRect().height - 50;
+
+    sectionTriggerPosTop = NavBarElements.sectionTrigger.getBoundingClientRect().top;
+    console.log('RESIZE', threshold)
+    console.log('RESIZE', sectionTriggerPosTop)
     NavBarElements.navbarBackground.style.width = currentNavItem.offsetWidth + "px"
     NavBarElements.navbarBackground.style.left = currentNavItem.offsetLeft + "px"
     console.log("ASDAKLSMDKMAS")
