@@ -6,14 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forfis</title>
+
+
+
+
     <link rel="stylesheet" href="styles/css/main.css">
     <link rel="stylesheet" href="styles/sound.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/mouse.css">
     <link rel="stylesheet" href="styles/sky.css">
-    <style>
 
-    </style>
+
+
 </head>
 
 <body>
@@ -76,9 +80,9 @@
             </nav> -->
 
             <div class="section__content">
-                <h2>Реализуем нереальное.<br>
-                    Растём вместе с вами.<br>
-                    Для каждого с мечтой.</h2>
+                <h3>Последний заказ: <b>24 сек. назад</b><br>
+                    Выручка за месяц: <b>1 000 000 000₽</b><br>
+                    Мы выполнили: <b>10 000 проектов</b></h3>
                 <div class="section__buttons">
                     <a href="" class="button request h3">Оставить заявку</a>
                     <div>
@@ -413,23 +417,26 @@
     <script src="./scripts/burger.js"></script>
 
     <script>
-        let htmlElement = document.querySelector("html");
-        console.log(`vw: ${window.innerWidth / 100}px vh: ${window.innerHeight / 100}px, vw/vh: ${window.innerWidth / window.innerHeight}`);
-        const checkScreenRatio = () => {
-            if (window.innerWidth / window.innerHeight > 2) {
-                htmlElement.classList.add("vh")
-            } else {
-                htmlElement.classList.remove("vh")
+        document.addEventListener("DOMContentLoaded", () => {
+            let htmlElement = document.querySelector("html");
+            console.log(`vw: ${window.innerWidth / 100}px vh: ${window.innerHeight / 100}px, vw/vh: ${window.innerWidth / window.innerHeight}`);
+            const checkScreenRatio = () => {
+                if (window.innerWidth / window.innerHeight > 2) {
+                    htmlElement.classList.add("vh")
+                } else {
+                    htmlElement.classList.remove("vh")
+                }
             }
-        }
-
-        checkScreenRatio()
-        window.addEventListener('resize', function () {
             checkScreenRatio()
+            window.addEventListener('resize', function () {
+                checkScreenRatio()
+            })
         })
-        
-        
+
     </script>
+
+
+
 
 </body>
 
