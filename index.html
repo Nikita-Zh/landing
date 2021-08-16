@@ -415,14 +415,20 @@
     <script>
         let htmlElement = document.querySelector("html");
         console.log(`vw: ${window.innerWidth / 100}px vh: ${window.innerHeight / 100}px, vw/vh: ${window.innerWidth / window.innerHeight}`);
-        window.addEventListener('resize', function () {
+        const checkScreenRatio = () => {
             if (window.innerWidth / window.innerHeight > 2) {
                 htmlElement.classList.add("vh")
             } else {
                 htmlElement.classList.remove("vh")
             }
-        })
+        }
 
+        checkScreenRatio()
+        window.addEventListener('resize', function () {
+            checkScreenRatio()
+        })
+        
+        
     </script>
 
 </body>
