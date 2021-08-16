@@ -485,7 +485,10 @@
 
     .svg-wrapper {
       display: flex;
-      height: 2rem;
+      img {
+        height: 2rem;
+        width: auto;
+      }
     }
 
     .sliderButtonNext {

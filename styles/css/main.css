@@ -746,7 +746,11 @@ html.vh {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.section-6 .slider .svg-wrapper img {
   height: 2rem;
+  width: auto;
 }
 
 .section-6 .slider .sliderButtonNext {
