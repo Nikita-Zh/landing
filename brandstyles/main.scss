@@ -41,8 +41,9 @@ a {
 
   section {
     position: relative;
-    height: 100vh;
+    // height: 100vh;
     // overflow: hidden;
+    height: 100vh;
     box-sizing: border-box;
     cursor: default;
   }

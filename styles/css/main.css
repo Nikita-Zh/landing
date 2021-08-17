@@ -364,6 +364,12 @@ html.vh {
   padding-bottom: 6rem;
 }
 
+@media screen and (max-width: 640px) {
+  .section-1 .section__content {
+    padding-bottom: 10rem;
+  }
+}
+
 .section-1 .section__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -379,7 +385,7 @@ html.vh {
 }
 
 .section-1 .sound-button {
-  height: 5rem;
+  height: 4rem;
 }
 
 .section-2 {
@@ -744,13 +750,17 @@ html.vh {
 
 .section-6 .section__buttons .button {
   padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .section-6 .tag-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 0.5rem;
+}
+
+.section-6 .tag-container span:not(:last-child) {
+  margin-right: 0.5rem;
 }
 
 .section-6 .slider {

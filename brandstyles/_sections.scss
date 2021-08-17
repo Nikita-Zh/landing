@@ -185,6 +185,9 @@
     flex-direction: column;
     //gap: 4.5rem;
     padding-bottom: 6rem;
+    @media screen and (max-width: 640px) {
+      padding-bottom: 10rem;
+    }
   }
 
   .section__buttons {
@@ -196,7 +199,12 @@
     padding-top: 4.5rem;
   }
   .sound-button {
-    height: 5rem;
+    height: 4rem;
+    // @media screen and (max-width: 640px) {
+    //   position: fixed;
+    //   right: 3rem;
+    //   bottom: 3rem;
+    // }
   }
 }
 
@@ -497,12 +505,17 @@
 
     .button {
       padding: 1rem;
+      margin-bottom: 1rem;
     }
   }
 
   .tag-container {
     display: flex;
-    gap: 0.5rem;
+
+    span:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+    // gap: 0.5rem;
   }
 
   .slider {
